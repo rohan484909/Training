@@ -1,0 +1,26 @@
+Basic command about Git
+   !...... first of all we config the git by using 
+     -> git config user.name"username"
+     -> git config user.email"email_id"
+......!
+    git init ->it is used for intialization
+    git add ->it is used for add a file in git hub but doing only this 
+               your file coludnt reach at git hub it means that file will
+               ready to go to git 
+    git status ->to check how many of file will be ready for commit
+    git commit->it will send to git hub but command line dont know where it
+                will be put so before commit we add origin by this command
+           $$$$$-> git remote add origin .link....
+    git push-> after that file will push to git hub by 
+               ->git push -u origin master
+How to remove rhe file from git hub
+   git rm ...filename..->remove the file
+   git commit -m "message"->change will commit
+   git push -u origin master->it will permanently change
+How to clone any directory
+   git clone ..link..->it will create a folder of repository in our sytem
+                      and which operation will perform and after that it will
+                    commit and push that file
+....! if any situation occur an push will be held then no push will perform 
+      then we should use pull...!
+  git pull               
