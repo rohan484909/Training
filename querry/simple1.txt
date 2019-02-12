@@ -1,0 +1,43 @@
+!..... first of all we have to create database by using create command
+      1.create database database_name
+      2.\l->it is used to show list of database
+      3.\c database_name->select database
+      4.\d table_name->it is used for description of table
+      5.\dt->it is used to show all the table
+      6.\q->for exist
+      7.select ->it is used to select data from database and result will be stored in result_set
+                  select * from table;
+                  select column1,column2,....from table;
+      8.select distinct->The SELECT DISTINCT statement is used to return only distinct (different) values.
+                        (select distinct column_name1,column2,... from table)
+      9.where clause->it is used for giving the condition
+           = 	Equal(select first_name from worker where department_id=2)
+          <> 	Not equal. Note: In some versions of SQL this operator may be written as !=(select first_name from worker where department_id<>2)
+           > 	Greater than(select first_name from worker where department_id>2)
+           < 	Less than(select first_name from worker where department_id<2)
+          >= 	Greater than or equal(select first_name from worker where department_id>=2)
+          <= 	Less than or equal(select first_name from worker where department_id<=2)
+      BETWEEN 	Between a certain range (SELECT column_name1, column_name2,....FROM table_name WHERE  column_name1 BETWEEN value1 AND value2;)
+        LIKE 	Search for a pattern(select first_name from worker where first_name like'%a')
+         IN 	To specify multiple possible values for a column(SELECT column_name(s)FROM table_name WHERE column_name IN (value1, value2, ...); 
+   
+
+!........querry on full outer join
+
+       10.select worker.first_name,worker.last_name,worker.salary,worker.joining_date,title.worker_title from worker full outer join title on                           worker.worker_id=title.worker_ref_id;
+      11.select worker.first_name,worker.last_name,worker.salary,worker.joining_date,title.worker_title,bonus.bonus_amount from worker full outer join title on       worker.worker_id=title.worker_ref_id full outer join bonus on worker.worker_id=bonus.worker_ref_id;
+      12. select worker.first_name,worker.last_name,worker.salary,worker.joining_date,title.worker_title,bonus.bonus_amount,department.department_name from worker full outer join title on worker.worker_id=title.worker_ref_id full outer join bonus on worker.worker_id=bonus.worker_ref_id full outer join department on worker.department_id=department.department_id;
+!.......querry on inner_join
+      13. select worker.first_name,worker.last_name,department.department_name,bonus.bonus_amount from worker inner join bonus on worker.worker_id=bonus.worker_ref_id inner join department on  worker.department_id=department.department_id;
+
+
+
+
+
+
+
+
+
+
+   
+
