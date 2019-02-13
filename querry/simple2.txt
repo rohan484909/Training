@@ -1,0 +1,21 @@
+    
+
+
+
+!!!!!!!! querry on join 
+  1.select worker.first_name,bonus.bonus_amount,title.worker_title,department.department_name from worker inner join bonus on worker.worker_id=bonus.worker_ref_id left outer  join department on worker.department_id=department.department_id left outer join title on worker.worker_id=title.worker_ref_id;
+
+    2.select worker.first_name,title.worker_title from worker full outer join title on worker.worker_id=title.worker_ref_id;
+
+    3.select department.department_name,count(worker.department_id) from worker inner join department on worker.department_id=department.department_id group by department_name;
+
+    4.create table title (title_id SERIAL PRIMARY KEY, worker_title VARCHAR(20));!.......FOR CREATED AUTO INCREMENT TABLE.......!
+
+    5.alter table worker add  FOREIGN KEY (bonus_id) REFERENCES bonus(bonus_id);
+
+    6.select first_name from worker where worker.salary  not   between 80000 and 90000;
+   
+
+    7.select worker.worker_id,worker.first_name,worker.last_name,worker.salary,worker.joining_date,title.worker_title,department.department_name,bonus.bonus_amount from worker full outer join department on worker.department_id=department.department_id full outer join title on worker.title_id=title.title_id full outer join bonus on worker.bonus_id=bonus.bonus_id order by worker_id asc;
+    8.select count(worker.bonus_id),bonus.bonus_amount from worker inner join bonus on worker.bonus_id=bonus.bonus_id group by bonus.bonus_amount;
+
