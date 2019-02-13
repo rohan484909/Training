@@ -1,0 +1,25 @@
+!........................................................................... insert into database multiple values through excel sheet or csv (comma seprated values)file
+      1.copy worker(all column name)from 'filelocation\file_name.csv'DELIMITER','CSV HEADER;
+!..................................................................................................................................................... innner sub querry
+      1.select worker.first_name from worker where worker.bonus_id=(select bonus_id from bonus where bonus_amount=5000);
+      2. select bonus.bonus_amount from bonus where bonus_id=any(select bonus_id from worker where worker.title_id=any (select title_id from title where worker_title='executive'));
+      3.select worker.first_name,bonus.bonus_amount from worker inner join bonus on worker.bonus_id=bonus.bonus_id where worker.worker_id=any(select worker_id from worker where title_id=(select title_id from title where worker_title='executive'));
+     {use of any ->it will return true if any result of subquerry will meet}
+     {use of all->it will return true if all result from subquerry will meet }
+     {use of exists->The EXISTS operator returns true if the subquery returns one or more records.}
+    4.select worker.first_name,department.department_name,bonus.bonus_amount from worker inner join bonus on worker.bonus_id=bonus.bonus_id inner join department on worker.department_id=department.department_id where worker.worker_id=any(select worker_id from worker where department_id=any(select department_id from department where department_name='HR'));
+    5.select worker.first_name,worker.last_name,bonus.bonus_amount from worker,bonus where worker_id=4 and bonus.bonus_id=(select bonus_id from worker where worker_id=4);
+    6.select worker.first_name,worker.last_name,bonus.bonus_amount from worker,bonus where worker_id=4 and bonus.bonus_id=(select bonus_id from worker where worker_id=4);
+  !....................................................................................................................................querry on like 
+     1.select first_name from worker where first_name like '%a';
+     2. select first_name from worker where first_name like '%a%';
+     3.select first_name from worker where first_name like '%a_';
+     4.select first_name from worker where first_name like '%a%_';   
+!.........................................................................................................................................
+      group by->The GROUP BY statement is often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns.
+!....................................................................................................................................................
+  date compherision 
+     select first_name from worker where joining_date<'2014-02-20';
+     select first_name from worker where joining_date>'2014-02-20 08:00:00';
+     select first_name from worker where joining_date>'2014-02-20 09:00:00';
+
