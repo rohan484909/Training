@@ -1,0 +1,8 @@
+  1.select departs from flights where st_to=any(select st_from from flights where st_to=any(select st_from from flights where st_to='Delhi')) and arrives='18:00:00';
+  2.select e_name from employee where e_id=any(select e_id from certified where a_id=any(select a_id from aircraft where cruisingrange >1000 group by a_id having count(a_id)>=2));
+  3. (select st_from ,st_to from flights where st_from='California') union (select st_from,st_to from flights where st_to='Mumbai') ;
+  4.(select start,ending from flights where ending=(select start from flights where ending=any(select start from flights where ending=any(select start from flights where ending='Abu-Dabi')))) union (select start,ending from flights where ending=any(select start from flights where ending=any(select start from flights where ending='Abu-Dabi')))  union (select start,ending from flights where ending=any(select start from flights where ending='Abu-Dabi')) union (select start,ending from flights where ending='Abu-Dabi');
+
+  5.offset->where i have to start select
+  6.limit->where the data has been selected
+  
