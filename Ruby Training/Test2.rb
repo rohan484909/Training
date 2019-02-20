@@ -19,5 +19,13 @@ class Test3
 	end
 end
 ref2=Test3.new
+ref3=Test3.new
 puts"gloabl variable #{$college_name}"
 
+puts "#{ref2}"
+puts "#{ref3}"
+ name1="Rajesh"
+ name2="Rajesh"
+ name3=String.try_convert("Rajesh")
+ puts name1.equal?name2
+ puts name3.equal?name2
