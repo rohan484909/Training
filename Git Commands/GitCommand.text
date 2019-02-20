@@ -24,3 +24,8 @@ How to clone any directory
 ....! if any situation occur an push will be held then no push will perform 
       then we should use pull...!
   git pull               
+ 
+
+///how to set url 
+ git remote add origin path
+ git remote set-url origin path
