@@ -1,0 +1,14 @@
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+  font-size: 100;
+  font-family: alian
+}
+p {
+  color: red;
+  border: 100px  solid green;
+  padding:10px;
+  margin: 100px;
+}
