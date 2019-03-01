@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function show() {
+			var x=document.getElementsByTagName('p');
+			console.log(x);
+			x[0].style.color="red";
+			x[1].style.color="blue";
+			x[0].style.fontSize="100px"
+			x[1].style.fontSize="100px";
+		}
+		
+	</script>
+</head>
+<body>
+<h1>hello this first page</h1>
+<p id="p1"> hi my name is rajesh rai</p>
+<p > hi my name is rakesh rai</p>
+<button onclick="show()"> click</button>
+</body>
+</html>
