@@ -1,0 +1,5 @@
+1.Category.joins(:articles):-(SELECT categories.* FROM categories
+                                    INNER JOIN articles ON articles.category_id = categories.id)
+2.Article.joins(:category, :comments):-(SELECT articles.* FROM articles
+                                      INNER JOIN categories ON categories.id = articles.category_id
+                                     INNER JOIN comments ON comments.article_id = articles.id)
