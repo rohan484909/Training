@@ -1,0 +1,24 @@
+1. Dynamic Finder :-
+       If you have a field called first_name on your Client model for example, you get          find_by_first_name for free from Active Record. If you have a locked field on the Client model, you also get find_by_locked method.
+       querry:- Category.find_by_name("Actor")
+       querry for lockin column;- Client.find_by_name_and_locked("Ryan", true)
+            
+
+2.enum :-values map to integers in database
+             a1=Article.first
+             a1.avail!
+             a1.avail?
+             a1.update! status:0
+             a1.update! status:1
+             a1.status
+             a1.status=nil
+             a1.status.nil?
+             a1.status
+enum status: [ :avail, :unavail ]
+3.understanding method chaining
+ 2.6.0:063>     Category.
+2.6.0 :064 >   select('categories.name,categories.id,articles.name').
+2.6.0 :065 >   joins(:articles).
+2.6.0 :066 >   find_by('categories.name'=>'Actor')
+
+
