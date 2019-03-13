@@ -3,3 +3,23 @@
 2.Article.joins(:category, :comments):-(SELECT articles.* FROM articles
                                       INNER JOIN categories ON categories.id = articles.category_id
                                      INNER JOIN comments ON comments.article_id = articles.id)
+3.  Category.joins(articles: [{ comments: :guest }, :tags]                                     :- SELECT  "categories".* FROM "categories" INNER JOIN "articles" ON "articles"."category_id" = "categories"."id" INNER JOIN "comments" ON "comments"."article_id" = "articles"."id" INNER JOIN "guests" ON "guests"."comment_id" = "comments"."id" INNER JOIN "tags" ON "tags"."article_id" = "articles"."id" LIMIT $1  [["LIMIT", 11]]
+
+4.Article.left_outer_joins(:tags).distinct.select('articles.*,count(tags.*) As tags_count').group('articles.id')
+
+         :- SELECT  DISTINCT articles.*,count(tags.*) As tags_count FROM "articles" LEFT OUTER JOIN "tags" ON "tags"."article_id" = "articles"."id" GROUP BY articles.id LIMIT $1  [["LIMIT", 11]]
+
+5.Eager loading:-Article.includes(:category, :comments)
+       this will load all the article which associate with category and commnets
+
+6.Nested Association :-Category.includes(articles: [{ comments: :guest }, :tags]).find(1)
+      this will return the category of id 1 and eager load of all associated articles,the associated article with tags and commnets and every commnets associated with guest 
+             {{{ SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+  Article Load (0.6ms)  SELECT "articles".* FROM "articles" WHERE "articles"."category_id" = $1  [["category_id", 1]]
+  Comment Load (0.7ms)  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1  [["article_id", 1]]
+  Guest Load (0.8ms)  SELECT "guests".* FROM "guests" WHERE "guests"."comment_id" IN ($1, $2, $3)  [["comment_id", 1], ["comment_id", 2], ["comment_id", 3]]
+  Tag Load (0.7ms)  SELECT "tags".* FROM "tags" WHERE "tags"."article_id" = $1  [["article_id", 1]]
+                        }}}}
+
+
+7.
