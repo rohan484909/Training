@@ -6,6 +6,7 @@
              3.post=Post.new
                post.name=""
                user.posts<<post
+        ///// ( u1.destroy)
              4. u1=user.posts.build({}):-This is similar to saying Post.new({user_id: user.id}).
 !!!!!belongs_to :author, class_name: 'User', foreign_key: 'user_id'
 2.has_one:-
@@ -13,4 +14,13 @@
             user.address
           2.user.build_address – same as the method provided by belongs_to; instantiates a new address but does not save it into database.
           3.the has_one allows you to define :dependent,class_name,foregin_key and other option    which is used in has_many relation.
-3.
+3.has_and_belongs_to_many:- user has many events and events has many users
+              a. u2 = User.find(2)
+                 u2.events
+                 u2.events.create(title: "dance")
+                 u1.events
+                 u1.events.create(title: "mimcery" )
+                 u1.events
+                 e1 = Event.select(:id).where(title: "song")
+
+                 
