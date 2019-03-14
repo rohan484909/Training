@@ -31,6 +31,15 @@
 9.calculation:-
      a. Article.count:-(Select count(*) from articles)
      b. Article.where(name:'Rajesh').count:-it will be count how many users of rajesh
+     c. Article.average("id"):-it will calculate average
+     d.Article.minimum("id"):-it will find the minmum value
+     e.Article.maximum("id"):-it will find the maximumvalue
+     f.Article.sum("id"):-it find the sum of id
+10.explain what will be used in fuction :-Category.where(id: 1).joins(:articles).explain
+
+
+
+
 
 
 
