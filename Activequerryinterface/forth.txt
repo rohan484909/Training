@@ -1,0 +1,40 @@
+1.Find or build a new object
+     Article.find_or_create_by(name:'History'):-this is find only this type name and if it will not find then it will created bt it cant save in the database so the other field will be itself submitted and save in databse.
+    
+2.finding by sql
+   Article.find_by_sql("select articles.name,categories.name from Categories inner join  articles on categories.id=articles.category_id")
+
+3.select_all:-when we need data in hashes we used this select_all
+    Article.connection.select_all("select name,created_at from articles").to_hash
+          !!!!here data will come into hash key value pair
+4.pluck:-
+     Article.where(status: true).pluck(:id)
+     Article.where(status: false).pluck(:id)
+     Article.distinct.pluck(:name):-SELECT DISTINCT "articles"."name" FROM "articles"
+     Article.pluck(:id,:name):-SELECT "articles"."id", "articles"."name" FROM "articles"
+
+!!!!!!!unlike select, pluck directly converts a database result into a Ruby Array, without constructing ActiveRecord objects. This can mean better performance for a large or often-running query. However, any model method overrides will not be available. For example:
+ 
+
+5.it will find all the ids from a column:-
+      Article.ids:-SELECT "articles"."id" FROM "articles"
+
+6.Exixstance of object:-
+       Article.exists?(5):-return true or false 
+
+7.Article.exists?(name: ['rajesh','History']):it will return true if any of record will exists .
+   (Article.exists?):-it will return true if one record will exists and if it will empty then it will false
+ 
+8.via model :
+     Article.any?
+     Article.many?
+9.calculation:-
+     a. Article.count:-(Select count(*) from articles)
+     b. Article.where(name:'Rajesh').count:-it will be count how many users of rajesh
+
+
+
+
+
+
+
