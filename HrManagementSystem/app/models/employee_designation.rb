@@ -1,0 +1,2 @@
+class EmployeeDesignation < ApplicationRecord
+end
