@@ -1,0 +1,13 @@
+class HomeController < ApplicationController
+  def index
+  	@games = Game.all
+  	@users = User.all
+  	@enrollements = Enrollment.all
+  end
+  def show
+  	@user = User.find(params[:id])
+  end
+  def edit
+  	
+  end
+end

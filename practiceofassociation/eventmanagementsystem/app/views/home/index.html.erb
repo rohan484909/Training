@@ -1,0 +1,16 @@
+<center>
+	<h1>No of the games</h1>
+<% @games.each do|game|%>
+<%= game.title%><br>
+<% end %>
+</center>
+<center><br><h1>No of users </h1>
+<% @users.each do|user|%>
+  <%= link_to user.name ,"home/#{user.id}/show"%><br>
+  <% end %></center>
+<center>
+	<br><h1>No of enrollements</h1>
+<% @enrollements.each do|enrollemet| %>
+  <%= enrollemet.category.nil? %><br>
+  <% end %>
+</center>
