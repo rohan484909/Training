@@ -1,0 +1,5 @@
+<% @students.each do|student|%>
+<%= link_to student.name, "student/#{student.id}/show" %><br>
+<% end %>
+<%= link_to 'Create Student Details' ,"student/new"%>
+

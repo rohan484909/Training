@@ -1,1 +1,5 @@
-This is an Edit page.
+<%= form_for @user, url: ""  do|f|%>
+<%= f.label :name%><br>
+<%= f.text_field :name%>
+<%= f.submit "Submit"%>
+<% end %>
