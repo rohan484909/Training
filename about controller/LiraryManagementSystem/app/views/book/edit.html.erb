@@ -1,0 +1,7 @@
+update new Book 
+<hr>
+<%= form_for @book, url: "" do |f| %>
+   
+   Content:<%= f.text_field :content, placeholder: " "%><br/>
+   <%= f.submit %>
+   <% end %>

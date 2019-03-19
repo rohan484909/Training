@@ -13,14 +13,25 @@ class BookController < ApplicationController
 
   
   def show
-  	
- end
+  	@book = Book.find(params[:id])
+  end
 
   def destroy
   @book = Book.find(params[:id])
      @book.destroy
 
      redirect_to "/"
+  end
+  def edit
+	@book = Book.find(params[:id])
+   end
+
+  def update
+
+  	@book = Book.find(params[:id])
+  	@book.update(book_params)
+  	redirect_to '/'
+
   end
   def book_params
   	params.require(:book).permit(:title, :content)
