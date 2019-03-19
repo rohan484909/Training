@@ -1,0 +1,7 @@
+Enter new Book 
+<hr>
+<%= form_for @book, url: "" do |f| %>
+   Title: <%= f.text_field  :title %><br/>
+   Content:<%= f.text_field :content%><br/>
+   <%= f.submit %>
+   <% end %>
