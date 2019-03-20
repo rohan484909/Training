@@ -1,0 +1,9 @@
+<h1>create New User</h1>
+    <%= form_for @person, url:"" do|form|%>
+    <%= form.label :name,"enter Your Name"%>
+    <%= form.text_field :name%>
+    <h3>i agree with the terms</h3>
+    <%= check_box("tag", tag.id) %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= form.submit "submit Details"%>
+<% end %>

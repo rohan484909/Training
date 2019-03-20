@@ -1,0 +1,5 @@
+<center><h1>List of Employee</h1>
+<% @persons.each do|person|%>
+<%= person.name%><br>
+<% end%>
+<%= link_to 'createNewPerson',"person/new"%></center>

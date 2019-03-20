@@ -1,0 +1,9 @@
+1. Valid? and inValid?:-{validates :name, presence: true}
+        p1 = Person.new
+        p1.errors.messages
+        p1.valid?
+        p.save!
+        Person.create!
+        p1.invalid?
+        Person.new.errors[:name].any?
+        Person.create.errors.details[:name] 
