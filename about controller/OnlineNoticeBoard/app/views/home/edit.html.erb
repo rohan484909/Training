@@ -1,0 +1,12 @@
+<center><h1>Update Notice</h1></center>
+<%= form_for Tiltecontent.new, url:""  do |form|%>
+
+
+<h1>enter comment</h1>
+<%= form.text_area :content, size: "30x10" %><br>
+
+
+
+
+<%= form.submit "Update"%>
+<% end %>

@@ -1,0 +1,10 @@
+ <h1>Our Blogs</h1><hr>
+ <% @titlecontents.each do|titlecontent|%>
+<%= titlecontent.title %><br>
+<%= titlecontent.content%><br>
+<%= link_to 'edit' ,"home/#{titlecontent.id}/edit"%>
+<%= link_to 'delete' ,"home/#{titlecontent.id}/destroy"%>
+<hr>
+<% end %>
+<%= link_to 'createNewNotice',"home/new"%>
+
