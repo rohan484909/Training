@@ -5,10 +5,7 @@
   <%= @employee.name %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @employee.password %>
-</p>
+<%= render partial: 'layouts/shared/password'%>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>

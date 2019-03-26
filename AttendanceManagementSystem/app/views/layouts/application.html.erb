@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <img src= "/assets/image2.jpeg" style="height: 500px">
+    <%#= image_tag "image2.jpeg" %>
+    <%= render partial: 'layouts/shared/header'%>
     <%= yield %>
+    <%= render partial: 'layouts/shared/footer'%>
+    <%= render partial: 'layouts/shared/image' %>
   </body>
 </html>
