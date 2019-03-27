@@ -1,0 +1,20 @@
+
+<h1>Create New User</h1>
+<%=form_tag("/index",method:"get") do|form|%>
+  <%= label_tag :Username %>
+  <%= text_field_tag :name %><br/>
+  <%= label_tag :password%>
+  <%= text_field_tag :password %>
+  <%= label_tag :Date_of_Birth%>
+  <%= text_field_tag :date_of_birth %>
+  <h4>Gender</h4>
+  <%=label_tag :male%><%= radio_button_tag(:male,"true") %>
+  <%= label_tag :female%><%= radio_button_tag(:female,"false")%>
+   <h1>I accept term and condition </h1> <%= radio_button_tag(:status,"true") %>
+   <%= text_area_tag(:message, "Hi, nice site", size: "24x6") %>
+<%= password_field_tag(:password) %>
+<%= time_zone_select(:person, :time_zone) %>
+<%= date_select :person, :birth_date %>
+<%= file_field_tag 'picture' %>
+<%end%>
+ 
