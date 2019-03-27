@@ -1,0 +1,11 @@
+<h1>No of Employees</h1>
+<% @employees.each do|user| %>
+<%= user.name %><br>
+
+<%= user.password%><br>
+<%= link_to 'createNewUser',new_registration_path, remote: true %>
+<%end%>
+<div id="student_details">
+	
+
+</div>

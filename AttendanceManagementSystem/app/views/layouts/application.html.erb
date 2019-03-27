@@ -4,7 +4,9 @@
     <title>AttendanceManagementSystem</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
+<script type="text/javascript" src="js/script.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,6 +17,6 @@
     <%= render partial: 'layouts/shared/header'%>
     <%= yield %>
     <%= render partial: 'layouts/shared/footer'%>
-    <%= render partial: 'layouts/shared/image' %>
+    <%#= render partial: 'layouts/shared/image' %>
   </body>
 </html>
