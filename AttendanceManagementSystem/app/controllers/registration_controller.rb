@@ -1,14 +1,19 @@
 class RegistrationController < ApplicationController
 	
   def index
-  	@employees = Employee.all
+  	@students = Student.all
   end
 
   def new
-  	@employee = Employee.new
-
+  @student = Student.new	
   end
+  def create
+     
+    @student = Student.new(student_params)
 
+    
+  end
+  
   def edit
   end
 
@@ -23,5 +28,9 @@ class RegistrationController < ApplicationController
   end
   def set_employee
   	@employee = Employee.find(params[:id])
+  end
+  def student_params
+
+    params.require(:student).permit(:email, :password)
   end
 end

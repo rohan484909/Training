@@ -12,11 +12,23 @@
   </head>
 
   <body>
-    <img src= "/assets/image2.jpeg" style="height: 500px">
-    <%#= image_tag "image2.jpeg" %>
-    <%= render partial: 'layouts/shared/header'%>
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+   <!--  <img src= "/assets/image2.jpeg" style="height: 500px">
+    <%#= image_tag "image2.jpeg" %> -->
+    <%#= render partial: 'layouts/shared/header'%>
     <%= yield %>
-    <%= render partial: 'layouts/shared/footer'%>
+    <%#= render partial: 'layouts/shared/footer'%>
     <%#= render partial: 'layouts/shared/image' %>
+    <% if student_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_student_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_student_session_path)  %>  
+  </li>
+<% end %>
   </body>
 </html>
