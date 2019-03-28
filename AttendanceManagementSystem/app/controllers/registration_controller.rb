@@ -10,8 +10,13 @@ class RegistrationController < ApplicationController
   def create
      
     @student = Student.new(student_params)
-
-    
+    respond_to do |format|
+      if @employee.save
+        format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
   end
   
   def edit

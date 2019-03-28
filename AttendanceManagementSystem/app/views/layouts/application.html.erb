@@ -21,14 +21,15 @@
     <%= yield %>
     <%#= render partial: 'layouts/shared/footer'%>
     <%#= render partial: 'layouts/shared/image' %>
-    <% if student_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_student_session_path, method: :delete) %>        
+    <%# if student_signed_in? %>
+ <!--  <li>
+  <%#= link_to('Logout', destroy_student_session_path, method: :delete) %>        
   </li>
-<% else %>
+<% #else %>
   <li>
-  <%= link_to('Login', new_student_session_path)  %>  
+  <%#= link_to('Login', new_student_session_path)  %>  
   </li>
-<% end %>
+<%# end %>-->
   </body>
 </html>
+ 
