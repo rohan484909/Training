@@ -1,0 +1,12 @@
+<h1>Create New Book</h1>
+	
+	
+    <%= form_with url:new_home_path do |form| %>
+      <%= form.label :Name_Of_Book%>
+      <%= form.text_field :name %><br/>
+      <%= form.label :Name_Of_Author%>
+      <%= form.text_field :Author%><br/>
+      <%= form.label :Price%>
+      <%= form.text_field :Price%><br/>
+      <%= form.submit %>
+    <% end %>

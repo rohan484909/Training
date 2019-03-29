@@ -1,0 +1,21 @@
+<h1>List Of All Books</h1>
+<table  style ="border: 1px solid black;">
+	<tr>
+		<th>name</th>
+		<th>Author</th>
+		<th>Price</th>
+	</tr>
+	<tr>
+    <% @books.each do|book| %>
+      <td><%= book.name%></td>
+      <td><%= book.Author%></td>
+      <td><%= book.Price%></td>
+    <%end%>
+  </tr>
+</table><%=link_to "createNewBook",new_home_path%>
+
+
+<!-- <div id="New_book">
+
+
+</div> -->
