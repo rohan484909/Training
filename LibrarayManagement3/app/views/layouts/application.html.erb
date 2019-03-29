@@ -11,6 +11,13 @@
 
   <body>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>

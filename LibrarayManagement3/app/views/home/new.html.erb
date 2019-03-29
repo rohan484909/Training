@@ -1,7 +1,7 @@
 <h1>Create New Book</h1>
 	
 	
-    <%= form_with url:new_home_path do |form| %>
+    <%= form_with model:@book, url: {action: "create" },local: true do |form| %>
       <%= form.label :Name_Of_Book%>
       <%= form.text_field :name %><br/>
       <%= form.label :Name_Of_Author%>

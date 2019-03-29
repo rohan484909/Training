@@ -1,2 +1,11 @@
-<h1>Home#edit</h1>
-<p>Find me in app/views/home/edit.html.erb</p>
+<h1>Edit Page</h1>
+<%= form_with model:@book, url: {action: "update" },local: true do |form| %>
+      <%= form.label :Name_Of_Book%>
+      <%= form.text_field :name %><br/>
+      <%= form.label :Name_Of_Author%>
+      <%= form.text_field :Author, :value => ""%><br/>
+      <%= form.label :Price%>
+      <%= form.text_field :Price, :value => ""%><br/>
+      <%= form.submit %>
+    <% end %>
+     

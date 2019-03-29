@@ -10,8 +10,11 @@
       <td><%= book.name%></td>
       <td><%= book.Author%></td>
       <td><%= book.Price%></td>
+      <td><%= link_to "edit","home/#{book.id}/edit"%></td>
+      <td><%=link_to "delete","home/#{book.id}/delete"%> </td>
+    </tr>
     <%end%>
-  </tr>
+  
 </table><%=link_to "createNewBook",new_home_path%>
 
 
