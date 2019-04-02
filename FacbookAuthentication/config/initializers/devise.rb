@@ -298,5 +298,6 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
 
   #config.omniauth :facebook, "2294555274201765", "App Secret", callback_url: "http://localhost:3000/users/OmniauthCallbacksController/facebook"
-  config.omniauth :facebook, "2294555274201765", "26da17279082a85a862885f7033a46b7", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  #config.omniauth :facebook, "2294555274201765", "26da17279082a85a862885f7033a46b7", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  #config.omniauth :google, "first-project-236406 ", "AIzaSyAbNdzEjQ7NipSoKbsaW99fJPncDtgMkjA", callback_url: "http://localhost:3000/users/auth/google/callback"
 end
