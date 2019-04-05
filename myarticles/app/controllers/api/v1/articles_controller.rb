@@ -11,7 +11,7 @@ module Api
 				render json: {status: 'sucess', message: 'loaded article', data: article},status: :ok
 			end 
 			def create
-			  article = Article.new(article_params) 
+				article = Article.create(article_params) 
 			  if article.save
 			  	render json: {status: 'sucess', message: 'saved article', data: article},status: :ok
 			  else
@@ -19,9 +19,25 @@ module Api
 			  end
 			end
 
-		private
+			def destroy
+				article = Article.find(params[:id])
+				article.destroy
+				render json: {status: 'sucess', message: 'deleted article', data: article},status: :ok
+			end
 
-			def article_params
+			def update
+				article = Article.find(params[:id])
+				if article.update_attributes(article_params)
+					render json: {status: 'sucess', message: 'Updated article', data: article},status: :ok
+				else
+					render json: {status: 'Error', message: 'Article not Updated', data: article.errors},status: :pnprocessable_entry
+			  end
+			end
+
+			
+
+		private
+      def article_params
 				params.permit(:title, :body)
 			end
 		end
