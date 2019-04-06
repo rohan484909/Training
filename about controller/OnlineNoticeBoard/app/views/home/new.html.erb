@@ -1,18 +1,18 @@
 <center><h1>Create New Notice</h1></center>
-<%= form_for @titlecontent, url:"" do |form|%>
-    <% if @titlecontent.errors.any? %>
-         <h2>Errors</h2>
-            <ul>
-            	<% @titlecontent.errors.full_messages.each do |message|%>
-            	    <li><%= message %></li>
-                <% end %>
-            </ul>
-    <% end %>
+  <% if @titlecontent.errors.any? %>
+      <h2>Errors:</h2>
+        <ul>
+          <%= @titlecontent.errors.full_messages.each do |message|%>
+            <li> 
+            	<%= message %>
+            </li>
+          <% end %>
+        </ul>
+  <% end %>
+  <%= form_for @titlecontent, url:"" do |form|%>
     <h1>enter title</h1>
-        <%= form.text_field :title%><br>
-
+      <%= form.text_field :title%><br>
     <h1>enter comment</h1>
-        <%= form.text_area :content, size: "30x10" %><br>
-
-    <%= form.submit "NoticeGenerate"%>
-<% end %>
+      <%= form.text_area :content, size: "30x10" %><br>
+      <%= form.submit "NoticeGenerate"%>
+  <% end %>

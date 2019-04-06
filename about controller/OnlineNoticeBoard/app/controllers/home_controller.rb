@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
   	@titlecontents = Tiltecontent.all
+    #render json: {new: "msg", data: @titlecontents}
   end
 
   def new
@@ -9,8 +10,12 @@ class HomeController < ApplicationController
 
   def create
   	# debugger
-  	@titlecontent = Tiltecontent.create(titlecontent_params)
-  	redirect_to '/'
+  	@titlecontent = Tiltecontent.new(titlecontent_params)
+  	if @titlecontent.save
+  		redirect_to '/'
+  	else
+  		render 'new'
+  	end
   end
   def delete
 
@@ -23,6 +28,8 @@ class HomeController < ApplicationController
   end
 
   def show
+    @titlecontent = Tiltecontent.find(params[:id])
+    #render json: {new: "msg", data: @titlecontent}
   end
 
   def edit
