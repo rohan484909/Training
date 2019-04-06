@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
   def index
-  	@titlecontents = Tiltecontent.all
+  #params[:page] ||=1
+    @titlecontents = Tiltecontent.order(:title).paginate(:per_page => 2,:page => params[:page])
+
+  	#@titlecontents = Tiltecontent.all
     #render json: {new: "msg", data: @titlecontents}
   end
 
