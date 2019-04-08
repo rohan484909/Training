@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tutorials
 	get '/books/search' 
   resources :feedbacks
    resources :home
