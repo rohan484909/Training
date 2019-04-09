@@ -1,0 +1,10 @@
+<h1>Profile for <%= @user.email%></h1>
+  <%= image_tag @user.avatar.url(:thumb) if @user.avatar?%>
+  <%= avatar_for(@user)%>
+
+  <% unless current_user.id == params[:id].to_i%>
+    <%= link_to "home_page", root_path%>
+  <% else%>
+    <%= link_to "Edit_Picture", edit_user_url%> 
+    <%= link_to "home_page", root_path%>
+  <%end%>
