@@ -1,44 +1,51 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :update, :destroy]
+    before_action :set_item, only: [:show, :update, :destroy]
 
-  # GET /items
-  def index
+    # GET /items
+    def index
     @items = Item.all
 
     render json: @items
-  end
+    end
 
-  # GET /items/1
-  def show
+    # GET /items/1
+    def show
     render json: @item
-  end
+    end
 
-  # POST /items
-  def create
+    # POST /items
+    def create
     @item = Item.new(item_params)
-
+    # debugger
     if @item.save
-      render json: @item, status: :created, location: @item
+      params[:document][":documents"].each  do |file|
+        
+        @item.documents.create(:document => file, :item_id => @item.id) #if params[:document][":documents"]
+        
+
+     end
+     render json: { msg: "success"}
+      # render :show, status: :created, location: @item
     else
       render json: @item.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /items/1
-  def update
+    # PATCH/PUT /items/1
+    def update
     if @item.update(item_params)
       render json: @item
     else
       render json: @item.errors, status: :unprocessable_entity
     end
-  end
+    end
 
-  # DELETE /items/1
-  def destroy
+    # DELETE /items/1
+    def destroy
     @item.destroy
-  end
+    end
 
-  private
+    private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
@@ -46,7 +53,6 @@ class ItemsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def item_params
-      debugger
-      params.permit(:name, :description, :picture)
+      params.permit(:name, :description, :picture, :document )
     end
 end
