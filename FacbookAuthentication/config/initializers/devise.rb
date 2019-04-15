@@ -296,9 +296,16 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+  #34ccbef088d9b28756b9
+  #a5ab6f466c2540bf7aec53ba29e3c027a52bac7b4d8c3440
+
 
   #config.omniauth :facebook, "2294555274201765", "App Secret", callback_url: "http://localhost:3000/users/OmniauthCallbacksController/facebook"
-  config.omniauth :github, "975e040d3e0b99ca7af9", "aac9e20d863cc29e14fb9cbb8b9a0577e2469eec", callback_url: "http://localhost:3000/users/auth/github/callback"
+  config.omniauth :github, "34ccbef088d9b28756b9", "a5ab6f466c2540bf7aec53ba29e3c027a52bac7b4d8c3440", callback_url: "http://localhost:3000/users/auth/github/callback"
   config.omniauth :facebook, "2294555274201765", "26da17279082a85a862885f7033a46b7", callback_url: "http://localhost:3000/users/auth/facebook/callback"
-  #config.omniauth :google, "first-project-236406 ", "AIzaSyAbNdzEjQ7NipSoKbsaW99fJPncDtgMkjA", callback_url: "http://localhost:3000/users/auth/google/callback"
+  client_id = Rails.application.secrets[:google_client_id]
+  client_secret = Rails.application.secrets[:google_secret]
+  config.omniauth :google_oauth2, "887132655832-3vgqi4gp0vdft7kv6all6ba2l81af1c3.apps.googleusercontent.com" ,"GGlL5WlIvseSQ7gcZNZgP5Pu" , {
+    scope: "contacts.readonly,userinfo.email"
+  }
 end
