@@ -29,6 +29,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 #gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
+gem 'google_sign_in'
 gem 'awesome_print'
 #gem 'json'
 
