@@ -1,4 +1,4 @@
-<%= form_with(model: employee, local: true, id:"signup") do |form| %>
+<%= form_with(model: employee, local: true, id: 'signup') do |form| %>
   <% if employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -22,6 +22,24 @@
   </div>
 
   <div class="actions">
-    <%= form.submit  'Signup' , id: 'sbt' %>
+    <%= form.submit  'Signup' ,id:'btn' %>
   </div>
 <% end %>
+
+<script>
+  $("#signup").validate({
+    rules: {
+      "employee[name]": {
+        required: true
+      },
+      "employee[profession]": {
+      required:true
+      }
+    },
+    messages:{
+      "employee[name]":{required: "*Name is required"},
+      "employee[profession]":{required: "Profession is required"}
+    }
+  });
+  
+</script>
