@@ -1,4 +1,4 @@
-<%= form_with(model: employee, local: true) do |form| %>
+<%= form_with(model: employee, local: true, id:"signup") do |form| %>
   <% if employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" id="name">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
@@ -22,6 +22,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  'Signup' , id: 'sbt' %>
   </div>
 <% end %>
