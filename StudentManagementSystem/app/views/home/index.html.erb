@@ -1,0 +1,28 @@
+<h1></h1>
+<p id="raj">Find me in app/views/home/index.html.erb</p>
+name:<input type="text" id="name"/> <br/>
+phone:<input type="text" id="phone_no"/><br/>
+email:<input type="text" id="email"><br/>
+<button id="change">change</button>
+<p id="demo"></p>
+<script>
+  /*$(function () {
+    $('raj').on('click', function () {
+        var Status = $(this).val();
+        $.ajax({
+            url: 'Ajax/StatusUpdate.php',
+            data: {
+                text: $("textarea[name=Status]").val(),
+                Status: Status
+            },
+            dataType : 'json'
+        });
+    });
+});*/
+document.getElementById("change").onclick = displayDate;
+
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+
+</script>
