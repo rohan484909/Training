@@ -1,21 +1,28 @@
 
 <h1 id="raj">Details of employee</h1>
-name:<h4 id="name">Rajesh</h4>
-phone:<h4 id="phone">9953484909</h4>
+name:<h4 id="name" >rajesh</h4>
+phone:<h4 id="phone" 9953484909>9953484909</h4>
 email:<h4 id="email">rai@807949@gmail.com</h4>
+address:<h4 id="address">faridabad</h4>
 <button id="change">change</button>
 <p id="demo"></p>
 
-
-
-
 <script>
-	document.getElementById("change").onclick = changeText;
+	$(document).ready(function() {
+    $('#change').click(function(event){
+			$.ajax({
+			  type:"GET",
+			  url:"/change",
 
-  function changeText() {
-    document.getElementById("name").innerHTML = "tarun";
-    document.getElementById("phone").innerHTML = "9711447157";
-    document.getElementById("email").innerHTML = "rajeshrai3054@gmail.com";
-  }
-  f
+			  data:{
+			  	name: "tarun",
+			  	phone: "9711447157",
+			  	email:  "Rajeshrai3054@gmail.com",
+			  	address: "Ballabhgarh"
+			  },    
+			  datatype: "script",
+			});
+			
+    })
+  });
 </script>
