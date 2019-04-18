@@ -1,2 +1,47 @@
-<h1>Home#new</h1>
-<p>Find me in app/views/home/new.html.erb</p>
+	<h1>New Employee</h1>
+	
+		<div id="first_step">
+			Name:<input type="text" id="name"/><br/>
+			Email:<input type="text" id="email"/><br/>	
+			<button id="next1">next</button>
+		</div>
+		<div id="second_step" class="hidden" >
+			phone:<input type="text" id="phone"/><br/>
+			address:<input type="text" id="address"/><br/>
+			<button id="next2">next</button>
+		</div>
+		
+		
+		<!-- 
+		<input>
+		salary:<input type="text" id="salary"/>
+    department:<input type="text" id="department"/> -->
+    <!-- <p id="demo" ></p> -->
+    <script>
+     
+      $(document).ready(function() {
+		    $('#next1').click(function(event){
+			
+					$.ajax({
+           type: "POST",
+           url: "/next1",
+           data: {
+           	name: $("#name").val(),
+           	email: $("#email").val(),
+           }, 
+          });
+        })
+		  
+	      $('#next2').click(function(event){
+				  $.ajax({
+	         type: "POST",
+	         url: "/next1",
+	         data: {
+	         	address: $("#phone").val(),
+	         	phone: $("#address").val(),
+	         }, 
+	        });
+				});
+      });
+    </script>
+
