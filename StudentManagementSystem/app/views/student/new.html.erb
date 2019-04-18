@@ -1,0 +1,32 @@
+<h1>Student#new</h1>
+<div id="img" >
+  <%= render partial: 'img' %>
+</div>
+
+<%= form_for @student,url: "/student/create", remote: true do |f| %>
+  <%= f.file_field :image,id:'image' %>
+  <%= f.submit "upload" ,id: 'show'%>
+<% end %>
+<script>
+	
+$("#new_student").ajaxForm();
+</script>
+ 
+
+
+<!-- <script>
+	$(document).ready(function() {
+    $('#show').click(function(event){
+			$.ajax({
+			  type:"GET",
+			  url:"/create",
+
+			  data:{
+			  	image: $("#image").html()
+			  },    
+			  datatype: "script",
+			});
+			
+    })
+  });
+</script> -->
