@@ -1,28 +1,21 @@
-<h1></h1>
-<p id="raj">Find me in app/views/home/index.html.erb</p>
-name:<input type="text" id="name"/> <br/>
-phone:<input type="text" id="phone_no"/><br/>
-email:<input type="text" id="email"><br/>
+
+<h1 id="raj">Details of employee</h1>
+name:<h4 id="name">Rajesh</h4>
+phone:<h4 id="phone">9953484909</h4>
+email:<h4 id="email">rai@807949@gmail.com</h4>
 <button id="change">change</button>
 <p id="demo"></p>
+
+
+
+
 <script>
-  /*$(function () {
-    $('raj').on('click', function () {
-        var Status = $(this).val();
-        $.ajax({
-            url: 'Ajax/StatusUpdate.php',
-            data: {
-                text: $("textarea[name=Status]").val(),
-                Status: Status
-            },
-            dataType : 'json'
-        });
-    });
-});*/
-document.getElementById("change").onclick = displayDate;
+	document.getElementById("change").onclick = changeText;
 
-function displayDate() {
-  document.getElementById("demo").innerHTML = Date();
-}
-
+  function changeText() {
+    document.getElementById("name").innerHTML = "tarun";
+    document.getElementById("phone").innerHTML = "9711447157";
+    document.getElementById("email").innerHTML = "rajeshrai3054@gmail.com";
+  }
+  f
 </script>
