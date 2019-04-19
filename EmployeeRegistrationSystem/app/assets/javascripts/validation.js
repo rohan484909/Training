@@ -89,9 +89,11 @@ $(document).ready(function(){
 	}
 	if (!error_free){
 		event.preventDefault(); 
+    /*$("#contact").submit();*/
 	}
 	else{
 		alert('No errors: Form will be submitted');
+		$("#contact").submit();
 	}
 });
 });
