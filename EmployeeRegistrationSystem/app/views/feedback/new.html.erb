@@ -1,0 +1,29 @@
+<h1>create new Feedback</h1>
+<%= form_for  @feedback, :url => { :action => "create" }, :html => {:id => "contact"} do |f| %>
+  <div>
+	  <%= f.label "name"%>
+	  <%= f.text_field :name%><br/>
+	</div>
+	<div>
+		<%= f.label "email"%>
+	  <%= f.text_field :email%><br/>
+	</div>
+	<div style="margin-left: 25px;">
+	  <%= f.label "feedback"%>
+	  <%= f.text_area :feedback%><br/>
+	</div>
+	<div style="margin-left: 5px;">
+		<%= f.submit "submit" ,:id => "contact_submit"%><br/>
+	</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
