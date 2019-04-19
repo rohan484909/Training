@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	$('#contact_name').on('input', function() {
 		var input=$(this);
-		alert(input.val());
 		var is_name=input.val();
 			if(is_name){
 				input.removeClass("invalid").addClass("valid");
@@ -28,7 +27,6 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('#contact_phone').on('input', function() {
 		var input=$(this);
-		alert(input.val());
 		var is_name=input.val();
 			if(is_name){
 				input.removeClass("invalid").addClass("valid");
@@ -41,7 +39,6 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('#contact_address').on('input', function() {
 		var input=$(this);
-		alert(input.val());
 		var is_name=input.val();
 			if(is_name){
 				input.removeClass("invalid").addClass("valid");
@@ -54,7 +51,6 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('#contact_salary').on('input', function() {
 		var input=$(this);
-		alert(input.val());
 		var is_name=input.val();
 			if(is_name){
 				input.removeClass("invalid").addClass("valid");
@@ -67,7 +63,6 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('#contact_department').on('input', function() {
 		var input=$(this);
-		alert(input.val());
 		var is_name=input.val();
 			if(is_name){
 				input.removeClass("invalid").addClass("valid");
@@ -86,7 +81,6 @@ $(document).ready(function(){
 	for (var input in form_data){
 		
 		var element = $("#contact_"+form_data[input]['name']);
-		alert(form_data[input]['name']);
 
 		var valid = element.hasClass("valid");
 		var error_element = $("span", element.parent());
