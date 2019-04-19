@@ -1,2 +1,46 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Registration Form</h1>
+<%= form_for  @employee, :url => { :action => "create" }, :html => {:id => "contact"} do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name ,:id =>"contact_name",:name => "name"%>
+    <span class="error">Name  is required</span>
+  </div>
+	<div>
+	  <%= f.label :email %>
+	  <%= f.text_field :email,:id => "contact_email",:name => "email" %>
+	  <span class="error">Email is required</span>
+	</div>
+	<div>
+	  <%= f.label :phone %>
+	  <%= f.text_field :phone,:id => "contact_phone",:name => "phone" %>
+	  <span class="error"> valid phone no is required</span>
+	</div>
+	<div>
+	  <%= f.label :address%>
+	  <%= f.text_field :address ,:id => "contact_address"%>
+	  <span class="error">This field is required</span>
+	</div>
+	<div>
+	  <%= f.label :salary %>
+	  <%= f.text_field :salary ,:id => "contact_salary"%>
+	  <span class="error">This field is required</span>
+	</div>
+	<div>
+	  <%= f.label :department %>
+	  <%= f.text_field :department ,:id => "contact_department"%>
+	  <span class="error">This field is required</span>
+	</div>
+	  
+	  <%= f.submit "Create" ,:id => "contact_submit"%><br/>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
