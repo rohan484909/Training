@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @employee = Employee.new
   end
 
   def new
@@ -7,7 +8,6 @@ class HomeController < ApplicationController
   end
 
   def next1
-  	debugger
   	session[:name] = params[:name]
     session[:email] = params[:email]
     session[:phone] = params[:phone]
@@ -15,6 +15,13 @@ class HomeController < ApplicationController
     @employee = Employee.new({name: session[:name],email: session[:email],phone: session[:phone],address: session[:address]}) if session[:address]
     if session[:address]
     	@employee.save
+    end
+  end
+  def create
+    debugger
+    @employee = Employee.new(name: params[:name],email: params[:email],phone: params[:phone],address: params[:address],salary: params[:salary],department: params[:department]);
+    if @employee.save
+      render action: 'new'
     end
   end
 end
