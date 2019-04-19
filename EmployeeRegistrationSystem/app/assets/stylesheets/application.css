@@ -49,3 +49,6 @@ input.invalid, textarea.invalid{
 input.valid, textarea.valid{
 	border: 2px solid green;
 }
+.new_feedback .error{
+	display: inline-block;
+}
