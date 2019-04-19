@@ -1,13 +1,13 @@
 	<h1>New Employee</h1>
 	
 		<div id="first_step">
-			Name:<input type="text" id="name"/><br/>
-			Email:<input type="text" id="email"/><br/>	
+			Name:<input type="text" id="name" /><br/>
+			Email:<input type="text" id="email" /><br/>	
 			<button id="next1">next</button>
 		</div>
 		<div id="second_step" class="hidden" >
-			phone:<input type="text" id="phone"/><br/>
-			address:<input type="text" id="address"/><br/>
+			phone:<input type="text" id="phone" /><br/>
+			address:<input type="text" id="address" /><br/>
 			<button id="next2">next</button>
 		</div>
 		
@@ -18,7 +18,35 @@
     department:<input type="text" id="department"/> -->
     <!-- <p id="demo" ></p> -->
     <script>
-     
+
+      $("#name").click(function(){
+        if (!$(this).val()) {
+            alert("The name is required");
+            $(this).focus();
+          }
+      });
+      $("#email").focusout(function(){
+        if (!$(this).val()) {
+            alert("The email is required");
+            $(this).focus();
+          }
+      });
+
+      $("#phone").focusout(function(){
+        if (!$(this).val()) {
+            alert("This field is required");
+            $(this).focus();
+          }
+      });
+      
+      $("#address").focusout(function(){
+        if (!$(this).val()) {
+            alert("This field is required");
+            $(this).focus();
+          }
+      });
+
+
       $(document).ready(function() {
 		    $('#next1').click(function(event){
 			
