@@ -25,16 +25,16 @@ $(document).ready(function(){
 	});
 });
 $(document).ready(function(){
-	$('#contact_phone').on('input', function() {
+	/*$('#contact_phone').on('input', function() {
 		var input=$(this);
 		var is_name=input.val();
-			if(is_name){
+			if(is_name && Number.isInteger(is_name) ){
 				input.removeClass("invalid").addClass("valid");
 			}
 			else{
 				input.removeClass("valid").addClass("invalid");
 			}
-	});
+	});*/
 });
 $(document).ready(function(){
 	$('#contact_address').on('input', function() {
@@ -49,16 +49,34 @@ $(document).ready(function(){
 	});
 });
 $(document).ready(function(){
-	$('#contact_salary').on('input', function() {
-		var input=$(this);
-		var is_name=input.val();
-			if(is_name){
+	/*$('#contact_salary').on('input', function() {
+		var is_name=$(this).val();
+		alert(is_name);
+		alert(Number.isInteger(is_name));
+
+			if(is_name && (Number.isInteger(is_name)) == true){
 				input.removeClass("invalid").addClass("valid");
 			}
 			else{
 				input.removeClass("valid").addClass("invalid");
 			}
+	});*/
+
+	$("#contact_salary, #contact_phone").keypress('input',function(e){
+		var keyCode = e.which;
+			if ( (keyCode != 8 || keyCode ==32 ) && (keyCode < 48 || keyCode > 57)) {
+			 	/*input.removeClass("invalid").addClass("valid");*/
+			  return false;
+			}
+			/*else{
+			 	input.removeClass("valid").addClass("invalid");
+			}*/
+
+
 	});
+
+
+
 });
 $(document).ready(function(){
 	$('#contact_department').on('input', function() {
